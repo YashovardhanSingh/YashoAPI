@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Animation 7</title>
+    <style>
+        @import url('ttps://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+        :root {
+          --duration: 2s;
+          --mainColor: #111;
+        }
+        
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        a {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          left: 50%;
+          top: 50%;
+          text-align: center;
+          width: 30rem;
+          height: 10rem;
+          text-decoration: none;
+          line-height: 10rem;
+          font-family: 'Poppins', sans-sarif;
+          font-weight: 600;
+          text-transform: uppercase;
+          font-size: 4em;
+          color: var(--mainColor);
+          letter-spacing: 0.5rem;
+          transition: calc(var(--duration) * 0.25);
+        }
+        
+        a svg, a svg rect {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+        }
+        
+        a svg rect {
+          stroke: var(--mainColor);
+          stroke-width: 1rem;
+          transition: var(--duration);
+          stroke-dasharray: 80rem;
+          stroke-dashoffset: 80rem;
+        }
+        
+        a:hover svg rect {
+          stroke-dashoffset: 0;
+        }
+        
+        a:hover {
+          background: #FFF5EE;
+          transition-delay: var(--duration);
+        }
+    </style>
+</head>
+<body>
+    <a href="#">
+        <svg>
+          <rect></rect>
+        </svg>
+        Button
+    </a>
+</body>
+</html>

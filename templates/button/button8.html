@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Animation 8</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+        :root {
+          --duration: 0.5s;
+          --mainBlack: #111;
+          --mainWhite: #fff;
+        }
+        
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        a {
+          text-decoration: none;
+          position: absolute;
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 50%;
+          font-family: 'Poppins', sans-sarif;
+          font-weight: 600;
+          font-size: 4em;
+          text-transform: uppercase;
+          letter-spacing: 0.5rem;
+          border: 0.5rem solid var(--mainBlack);
+          padding: 1.5rem 3rem;
+          overflow: hidden;
+        }
+        
+        a::before, a::after {
+          position: absolute;
+          content: attr(data-text);
+          left: 0;
+          padding: 1.5rem 3rem;
+          transition: var(--duration);
+        }
+        
+        a::before {
+          top: 100%;
+          background: var(--mainBlack);
+          color: var(--mainWhite);
+        }
+        
+        a::after {
+          top: 0;
+          background: var(--mainWhite);
+          color: var(--mainBlack);
+        }
+        
+        a:hover::before {
+          top: 0;
+        }
+        
+        a:hover::after {
+          top: -100%;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.google.com" target="_blank" data-text="Button"> Button </a>
+</body>
+</html>
