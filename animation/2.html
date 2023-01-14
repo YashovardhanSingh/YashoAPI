@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+          }
+          
+          .circle {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            background: black;
+            animation: pulse 0.5s linear;
+            border-radius: 50%;
+          }
+          
+          @keyframes pulse {
+            0% {
+              width: 0px;
+              height: 0px;
+              opacity: 1;
+            }
+            100% {
+              width: 100px;
+              height: 100px;
+              opacity: 0;
+            }
+          }
+    </style>
+</head>
+<body>
+    <script>    
+        const pulse = (event) => {
+            const ele = document.createElement("div");
+            ele.classList.add('circle');
+            ele.style.top = event.pageY + 'px';
+            ele.style.left = event.pageX + 'px';
+            document.body.appendChild(ele);
+            
+            setTimeout(() => {
+              document.body.removeChild(ele);
+            }, 1000);
+          }
+          
+          document.body.addEventListener('click', pulse);
+    </script>
+</body>
+</html>

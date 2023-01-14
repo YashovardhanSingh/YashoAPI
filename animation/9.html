@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 9</title>
+    <style>
+        body {
+            background: #111;
+            height: 100vh;
+            overflow: hidden;
+          }
+          
+          span {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            background: url('https://www.freeiconspng.com/thumbs/heart-png/heart-png-15.png');
+            background-size: cover;
+            background-position: center;
+            pointer-events: none;
+            animation: animate 2s linear infinite;
+          }
+          
+          @keyframes animate {
+            from{
+              opacity: 1;
+              transform: translate(-50%, -50%);
+              filter: hue-rotate(0deg);
+            }
+            to {
+              opactiy: 0;
+              transform: translate(-50%, -1000%);
+              filter: hue-rotate(720deg);
+            }
+          }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener("mousemove", (e) => {
+            const heart = document.createElement("span");
+            heart.style.left = e.offsetX + 'px';
+            heart.style.top = e.offsetY + 'px';
+            const size = Math.random() * 100;
+            heart.style.width = size + 'px';
+            heart.style.height = size + 'px';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {heart.remove();}, 2000);
+          })
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 8</title>
+    <style>
+        :root {--duration: 10s}
+
+        div {
+          position: relative;
+          width: 30rem;
+          height: 30rem;
+          border-radius: 50%;
+          background: url('https://www.pngplay.com/wp-content/uploads/2/World-Map-PNG-Photos.png');
+          box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+          display: grid;
+          place-items: center;
+          animation: earth 10s infinite linear;
+          transition: 1s;
+          overflow: hidden;
+          z-index: 2;
+        }
+        
+        body {
+          height: 100vh;
+          background: url('https://www.pngplay.com/wp-content/uploads/2/World-Map-PNG-Photos.png');
+          box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+          display: grid;
+          place-items: center;
+          animation: earth var(--duration) infinite linear;
+          transition: 1s;
+          z-index: 2;
+          margin: 0;
+        }
+        
+        body::before, div::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background: url('https://www.pngkey.com/png/full/329-3294642_earth-clouds-drawing.png');
+          z-index: 1;
+          animation: cloud calc(var(--duration) * 1.5) infinite linear;
+        }
+        
+        div:active, body:active {
+          transform: scale(2);
+        }
+        
+        @keyframes earth {
+          from { background-position: 0 0}
+          to { background-position: -1725px 0}
+        }
+        @keyframes cloud {
+          from { background-position: 0 0}
+          to { background-position: -2000px 0}
+        }
+    </style>
+</head>
+<body>
+<img alt="Plane" src="https://www.i2symbol.com/images/symbols/popular/airplane_u2708_icon_256x256.png">
+</body>
+</html>

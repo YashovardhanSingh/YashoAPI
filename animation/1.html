@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 1</title>
+    <style>
+        :root {
+            --gradient: linear-gradient(
+              45deg, #845ec2, #d65db1, #ff6f91, #ff9671, #ffc75f, #f9f871
+            );
+          }
+          
+          body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: var(--gradient);
+            overflow: hidden;
+            background-size: 400%;
+            animation: bg-animation 4s infinite alternate;
+          }
+          
+          @keyframes bg-animation {
+            0% {
+              background-position: left;
+            }
+            100% {
+              background-position: right;
+            }
+          }
+          
+          div {
+            background: var(--gradient);
+            background-size: 200%;
+            position: relative;
+            padding: 3px;
+            transition: all 1s;
+            background-position: right;
+          }
+          
+          button {
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 2rem;
+            font-family: Verdana, sans-sarif;
+            background-image: var(--gradient);
+            background-size: 300%;
+            background-position: left;
+            transition: background-position 2s;
+            cursor: pointer;
+          }
+          
+          button:hover, button:focus {
+            background-position: right;
+          }
+          button:hover ~ div {
+            background-position: left;
+          }
+    </style>
+</head>
+<body>
+    <div>
+        <button> Hover Me! </button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 7</title>
+    <style>
+        :root {
+            --mainColor: #1B1212;
+            --duration: 1s;
+          }
+          
+          body {
+            display: grid;
+            place-items: center;
+            background: #666;
+            height: 100vh;
+            overflow: hidden;
+          }
+          
+          #cradle {
+            border-top: 0.75rem solid var(--mainColor);
+            border-bottom: 5rem solid var(--mainColor);
+            border-right: 0.25rem solid var(--mainColor);
+            border-left: 0.25rem solid var(--mainColor);
+            display: flex;
+            padding: 0 8rem 4rem;
+          }
+          
+          span {
+            position: relative;
+            display: block;
+            width: 0.25rem;
+            height: 12rem;
+            background: var(--mainColor);
+            margin: 0 2rem;
+            transform-origin: top;
+          }
+          span::before {
+            content: '';
+            position: absolute;
+            height: 4.25rem;
+            width: 4.25rem;
+            border-radius: 50%;
+            background: var(--mainColor);
+            bottom: 0;
+            left: -2.125rem;
+          }
+          
+          span:first-child {
+            animation: animate1 var(--duration) linear infinite;
+          }
+          span:last-child {
+            animation: animate2 var(--duration) linear infinite;
+            animation-delay: calc(var(--duration) / 2);
+          }
+          @keyframes animate1 {
+            0% { transform: rotate(0deg) }
+            25% { transform: rotate( 60deg )}
+            50% { transform: rotate(0deg)}
+            100% { transform: rotate(0deg)}
+          }
+          @keyframes animate2 {
+            0% { transform: rotate(0deg) }
+            25% { transform: rotate( -60deg )}
+            50% { transform: rotate(0deg)}
+            100% { transform: rotate(0deg)}
+          }
+    </style>
+</head>
+<body>
+    <div id='cradle'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+</body>
+</html>

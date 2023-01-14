@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 6</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Monospace, sans-sarif;
+          }
+          
+          body {
+            background: black;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+          }
+          
+          h1 {
+            font-size: 15em;
+            color: white;
+            position: relative;
+          }
+          
+          h1::before {
+            content: '';
+            animation: animate 3s linear infinite;
+          }
+          
+          @keyframes animate {
+            0% {content: "One"}
+            20% {content: "day"}
+            40% {content: "at"}
+            60% {content: "a"}
+            80% {content: "time."}
+            100% {content: "One"}
+          }
+    </style>
+</head>
+<body>
+    <h1></h1>
+</body>
+</html>
