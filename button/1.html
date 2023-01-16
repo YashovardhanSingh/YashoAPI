@@ -9,76 +9,76 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
         :root {
-        --duration: 0.5s;
-        --borderSize: 0.4rem;
-        --remainingSize: 1rem;
+            --duration: 0.5s;
+            --borderSize: 0.4rem;
+            --remainingSize: 1rem;
         }
 
         * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-sarif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-sarif;
         }
 
         body {
-        display: grid;
-        place-items: center;
-        height: 100vh;
+            display: grid;
+            place-items: center;
+            height: 100vh;
         }
 
         a {
-        position: relative;
-        display: inline-block;
-        padding: 1.5rem 3rem;
-        border: var(--borderSize) solid #111;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: #111;
-        font-weight: 600;
-        font-size: 2em;
-        user-select: none;
+            position: relative;
+            display: inline-block;
+            padding: 3rem 6rem;
+            border: var(--borderSize) solid #111;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #111;
+            font-weight: 600;
+            font-size: 4em;
+            user-select: none;
         }
 
         a::before, a::after {
-        content: '';
-        position: absolute;
-        background: white;
-        transition: var(--duration) ease-in-out;
+            content: '';
+            position: absolute;
+            background: white;
+            transition: var(--duration) ease-in-out;
         }
 
         a::before {
-        top: var(--remainingSize);
-        left: calc(var(--borderSize) * -1);
-        width: calc(100% + calc(var(--borderSize) * 2));
-        height: calc(100% - calc(var(--remainingSize) * 2));
-        transform: scaleY(1);
+            top: var(--remainingSize);
+            left: calc(var(--borderSize) * -1);
+            width: calc(100% + calc(var(--borderSize) * 2));
+            height: calc(100% - calc(var(--remainingSize) * 2));
+            transform: scaleY(1);
         }
 
         a:hover::before {
-        transform: ScaleY(0);
+            transform: ScaleY(0);
         }
 
         a::after {
-        top: calc(var(--borderSize) * -1);
-        left: var(--remainingSize);
-        height: calc(100% + calc(var(--borderSize) * 2));
-        width: calc(100% - calc(var(--remainingSize) * 2));
-        transform: scaleX(1);
-        transition-delay: var(--duration);
+            top: calc(var(--borderSize) * -1);
+            left: var(--remainingSize);
+            height: calc(100% + calc(var(--borderSize) * 2));
+            width: calc(100% - calc(var(--remainingSize) * 2));
+            transform: scaleX(1);
+            transition-delay: var(--duration);
         }
 
         a:hover::after {
-        transform: scaleX(0);
+            transform: scaleX(0);
         }
 
         span {
-        position: relative;
-        z-index: 2;
+            position: relative;
+            z-index: 2;
         }
 
         span:hover {
-        color: #555;
+            color: #555;
         }
     </style>
 </head>
